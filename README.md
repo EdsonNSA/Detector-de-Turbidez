@@ -14,6 +14,7 @@ Este é um projeto simples e funcional de detecção de turbidez em água utiliz
 
 ![Exemplo de Funcionamento](exemplo_turbidez.png)
 
+
 ⚙️ Como Funciona
 
 A câmera (por exemplo, usando o app Iriun Webcam) captura o vídeo em tempo real.
@@ -25,6 +26,7 @@ A turbidez é calculada com base no desvio padrão dos tons de cinza da região 
 O nível é classificado automaticamente com base em faixas predefinidas.
 
 O usuário pode capturar uma imagem com a turbidez medida pressionando a tecla x.
+
 
 
 🧠 Lógica de Classificação
@@ -45,11 +47,13 @@ Numpy
 💡 Recomenda-se usar o app Iriun Webcam no celular como fonte de vídeo, configurando a câmera como cap = cv2.VideoCapture(1).
 
 
+
 ⌨️ Controles
 
 Tecla	            Função
   x	           Captura e salva a imagem
   q	           Encerra o programa
+
 
 
 🧪 Aplicações
