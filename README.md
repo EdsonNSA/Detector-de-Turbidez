@@ -15,54 +15,59 @@ Este é um projeto simples e funcional de detecção de turbidez em água utiliz
 ![Exemplo de Funcionamento](exemplo_turbidez.png)
 
 
-⚙️ Como Funciona
-A câmera (por exemplo, usando o app Iriun Webcam) captura o vídeo em tempo real.
+### ⚙️ Como Funciona
 
-Uma área de detecção (ROI) é definida no centro da tela.
+- A câmera (por exemplo, usando o app **Iriun Webcam**) captura o vídeo em tempo real.  
+- Uma **área de detecção (ROI)** é definida no centro da tela.  
+- A **turbidez é calculada** com base no desvio padrão dos tons de cinza da região capturada.  
+- O **nível é classificado automaticamente** com base em faixas predefinidas.  
+- O usuário pode **capturar uma imagem** com a turbidez medida pressionando a tecla `x`.
 
-A turbidez é calculada com base no desvio padrão dos tons de cinza da região capturada.
+---
 
-O nível é classificado automaticamente com base em faixas predefinidas.
+### 🧠 Lógica de Classificação
 
-O usuário pode capturar uma imagem com a turbidez medida pressionando a tecla x.
+- **Desvio Padrão (`np.std`)**:
+  - `< 10` → **Baixa** → 🟢 Verde  
+  - `10 a 30` → **Moderada** → 🟡 Amarelo  
+  - `> 30` → **Alta** → 🔴 Vermelho  
 
+---
 
+### 🛠 Requisitos
 
-🧠 Lógica de Classificação
+- Python 3.7+  
+- OpenCV  
+  ```bash
+  pip install opencv-python
+  ```  
+- Numpy
 
-Desvio Padrão (np.std)	      Classificação	            Cor na Tela
-      < 10	                       Baixa	                 Verde
-     10 - 30	                     Moderada	               Amarelo
-      > 30	                       Alta	                   Vermelho
+- 
+💡 **Dica**: Recomenda-se usar o app **Iriun Webcam** no celular como fonte de vídeo, configurando a câmera no código com:
+```python
+cap = cv2.VideoCapture(1)
+```
 
-🛠 Requisitos
-
-Python 3.7+
-
-OpenCV (pip install opencv-python)
-
-Numpy
-
-💡 Recomenda-se usar o app Iriun Webcam no celular como fonte de vídeo, configurando a câmera como cap = cv2.VideoCapture(1).
-
-
-
-⌨️ Controles
-
-Tecla	            Função
-  x	           Captura e salva a imagem
-  q	           Encerra o programa
+---
 
 
+### ⌨️ Controles
 
-🧪 Aplicações
+- `x` → Captura e salva a imagem  
+- `q` → Encerra o programa
+
+---
+
+
+### 🧪 Aplicações
 
 Este projeto pode ser usado como prova de conceito ou base para:
 
-Projetos de sustentabilidade
+- Projetos de sustentabilidade
 
-Monitoramento ambiental
+- Monitoramento ambiental
 
-Educação em ciências e tecnologia
+- Educação em ciências e tecnologia
 
-Prototipagem de sensores ópticos
+- Prototipagem de sensores ópticos
