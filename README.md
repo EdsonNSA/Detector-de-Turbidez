@@ -16,7 +16,6 @@ Este é um projeto simples e funcional de detecção de turbidez em água utiliz
 
 
 ⚙️ Como Funciona
-
 A câmera (por exemplo, usando o app Iriun Webcam) captura o vídeo em tempo real.
 
 Uma área de detecção (ROI) é definida no centro da tela.
